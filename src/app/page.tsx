@@ -6,10 +6,11 @@ const Calculator = () => {
  const [expression, setExpression] = useState('');
 
  const buttons = [
-    '7', '8', '9', '/',
-    '4', '5', '6', '*',
-    '1', '2', '3', '-',
-    '0', '.', '+', '='
+    '00', '000', '%', 'C',
+    '9', '8', '7', '*',
+    '6', '5', '4', '-',
+    '3', '2', '1', '/',
+    '0','.','+','='
  ];
 
  const handleClick = (button:any) => {
@@ -19,6 +20,10 @@ const Calculator = () => {
         setExpression('');
       } 
       
+    } 
+    else if (button === 'C') {
+      setResult(0);
+      setExpression('');
     }  else {
       setExpression(expression + button);
     }
